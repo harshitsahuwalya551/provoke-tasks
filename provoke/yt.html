@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube Video Player</title>
+    <link href="https://vjs.zencdn.net/7.15.4/video-js.min.css" rel="stylesheet">
+    <script src="https://vjs.zencdn.net/7.15.4/video.min.js"></script>
+</head>
+<body>
+    <div id="player"></div>
+    <script>
+        function onYouTubeIframeAPIReady() {
+            var player = new YT.Player('player', {
+                height: '360',
+                width: '640',
+                videoId: 'rK-D4g3OcNw',
+                playerVars: {
+                    controls: 1,
+                    autoplay: 1,
+                    loop: 1,
+                },
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            event.target.playVideo();
+        }
+    </script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>
